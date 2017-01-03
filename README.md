@@ -17,7 +17,7 @@ my_app = app(440) #Team Fortress 2
 
 print("Profile Name     :", my_player.get_profile_name())
 print("Profile ID       :", my_player.get_steam_id())
-print("Number of friends:",my_player.get_num_friends())
+print("Number of friends:", my_player.get_num_friends())
 
 print("App Name         :", my_app.get_app_name())
 print("App ID           :", my_app.get_app_id())
