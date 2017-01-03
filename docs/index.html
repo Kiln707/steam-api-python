@@ -1,0 +1,131 @@
+ <!DOCTYPE html>
+ <html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+        <!-- Default -->
+        <link rel="stylesheet" type="text/css" href="css/styles.css" />
+        <script src="js/script.js"></script>
+
+        <!-- Bootstrap -->
+        <link href="css/bootstrap.min.css" rel="stylesheet" />
+        <script src="js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <div class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-main" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html">Jack Hance</a>
+                </div>
+                <div class="collapse navbar-collapse" id="navbar-collapse-main">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown">
+                            <li class="active"><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="jumbotron text-center">
+            <h1>Steam-API-Python</h1>
+            <h3> An Unofficial Steam API built on Python </h3>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h3>What is it?</h3>
+                    <p>
+                        This is an unofficial Steam API written in python, making it easy to get information about store apps and Steam users.
+                        It works by using the <a href="https://github.com/kennethreitz/requests">Requests</a> package to retrieve information from Steam's web API (more info on Steam's API can be found <a href="https://developer.valvesoftware.com/wiki/Steam_Web_API">here</a>).
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <h3>How to use it</h3>
+                    <p>
+                        Steam_api is object oriented, and works by making a client with a <a href="https://steamcommunity.com/dev/apikey">Steam API key</a> and then making player objects from there. Getting store app information does not require an API key so `app` objects do not need to be made through a client object.<br />
+                        Here are a few examples:
+                    </p>
+                    <pre><code>
+                        from steam_api import client, player, app
+
+                        my_client = client("XXXXXXXXXXXXXXXX") #Put your Steam API key here!
+                        my_player = my_client.new_player("76561198075159344") #that's me!
+                        my_app = app(440) #Team Fortress 2
+
+                        print("Profile Name     :", my_player.get_profile_name())
+                        print("Profile ID       :", my_player.get_steam_id())
+                        print("Number of friends:", my_player.get_num_friends())
+
+                        print("App Name         :", my_app.get_app_name())
+                        print("App ID           :", my_app.get_app_id())
+                        print("Store Page URL   :", my_app.get_app_storepage_url())
+                    </code></pre>
+                    <p>
+                        Running that with a valid API key will return:
+                    </p>
+                    <pre><code>
+                        Profile Name     : SHENANIGANS
+                        Profile ID       : 76561198075159344
+                        Number of friends: 188
+                        App Name         : Team Fortress 2
+                        App ID           : 440
+                        Store Page URL   : http://store.steampowered.com/app/440/
+                    </code></pre>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <h3>How to install it</h3>
+                    <p>
+                        Download the repository and run <kbd>python setup.py install</kbd> and it will be install globally on the system. Once it is installed it can be imported and used in projects as shown above.
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <h3>Other things</h3>
+                    <p>
+                        <ul>
+                            <li>This API is unofficial</li>
+                            <li>This is still being developed so stay tuned for updates!</li>
+                            <li>This is my first python package so advice and suggestions are welcome!</li>
+                            <li>You can get an API key at <a href="https://steamcommunity.com/dev/apikey">https://steamcommunity.com/dev/apikey</a></li>
+                            <li>This is works off of the Steam Web API so if the Web API is down, so is this app!</li>
+                            <li>This app isn't exactly the fastest thing in the world, so be wary with what you use it with, it could end up being the bottleneck in your project</li>
+                            <li>This is Licensed under the MIT Open Source License</li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <p>
+                Copyright &copy; 2017 Jack Hance
+            </p>
+        </div>
+        <!-- Bootstrap core JavaScript
+        ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js" integrity="sha384-THPy051/pYDQGanwU6poAc/hOdQxjnOEXzbT+OuUAFqNqFjL+4IGLBgCJC3ZOShY" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.min.js" integrity="sha384-Plbmg8JY28KFelvJVai01l8WyZzrYWG825m+cZ0eDDS1f7d/js6ikvy1+X+guPIB" crossorigin="anonymous"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+            <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </body>
+ </html>
