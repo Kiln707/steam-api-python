@@ -30,8 +30,6 @@
                     <ul class="nav navbar-nav">
                         <li class="dropdown">
                             <li class="active"><a href="index.html">Home</a></li>
-                            <li><a href="about.html">About</a></li>
-                            <li><a href="contact.html">Contact</a></li>
                         </li>
                     </ul>
                 </div>
@@ -58,31 +56,31 @@
                         Steam_api is object oriented, and works by making a client with a <a href="https://steamcommunity.com/dev/apikey">Steam API key</a> and then making player objects from there. Getting store app information does not require an API key so `app` objects do not need to be made through a client object.<br />
                         Here are a few examples:
                     </p>
-                    <pre><code>
-                        from steam_api import client, player, app
+                    <pre><p>
+from steam_api import client, player, app
 
-                        my_client = client("XXXXXXXXXXXXXXXX") #Put your Steam API key here!
-                        my_player = my_client.new_player("76561198075159344") #that's me!
-                        my_app = app(440) #Team Fortress 2
+my_client = client("XXXXXXXXXXXXXXXX") #Put your Steam API key here!
+my_player = my_client.new_player("76561198075159344") #that's me!
+my_app = app(440) #Team Fortress 2
 
-                        print("Profile Name     :", my_player.get_profile_name())
-                        print("Profile ID       :", my_player.get_steam_id())
-                        print("Number of friends:", my_player.get_num_friends())
+print("Profile Name     :", my_player.get_profile_name())
+print("Profile ID       :", my_player.get_steam_id())
+print("Number of friends:", my_player.get_num_friends())
 
-                        print("App Name         :", my_app.get_app_name())
-                        print("App ID           :", my_app.get_app_id())
-                        print("Store Page URL   :", my_app.get_app_storepage_url())
-                    </code></pre>
+print("App Name         :", my_app.get_app_name())
+print("App ID           :", my_app.get_app_id())
+print("Store Page URL   :", my_app.get_app_storepage_url())
+                    </p></pre>
                     <p>
                         Running that with a valid API key will return:
                     </p>
                     <pre><code>
-                        Profile Name     : SHENANIGANS
-                        Profile ID       : 76561198075159344
-                        Number of friends: 188
-                        App Name         : Team Fortress 2
-                        App ID           : 440
-                        Store Page URL   : http://store.steampowered.com/app/440/
+Profile Name     : SHENANIGANS
+Profile ID       : 76561198075159344
+Number of friends: 188
+App Name         : Team Fortress 2
+App ID           : 440
+Store Page URL   : http://store.steampowered.com/app/440/
                     </code></pre>
                 </div>
             </div>
